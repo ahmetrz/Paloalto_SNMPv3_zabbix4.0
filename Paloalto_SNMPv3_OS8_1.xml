@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>4.0</version>
-    <date>2019-05-28T14:05:17Z</date>
+    <date>2019-06-06T11:41:00Z</date>
     <groups>
         <group>
             <name>Templates Generic</name>
@@ -2018,7 +2018,7 @@
                             <master_item/>
                         </item_prototype>
                         <item_prototype>
-                            <name>$1 alias (descriptiom)</name>
+                            <name>$1 alias (description)</name>
                             <type>6</type>
                             <snmp_community/>
                             <snmp_oid>.1.3.6.1.2.1.31.1.1.1.18.{#SNMPINDEX}</snmp_oid>
@@ -2278,7 +2278,24 @@
                             <master_item/>
                         </item_prototype>
                     </item_prototypes>
-                    <trigger_prototypes/>
+                    <trigger_prototypes>
+                        <trigger_prototype>
+                            <expression>{Template SNMPv3 Palo alto OS 8.1:ifAdminStatus.[&quot;{#IFNAME}&quot;].last()}=1 and {Template SNMPv3 Palo alto OS 8.1:ifOperStatus.[&quot;{#IFNAME}&quot;].last()}=2</expression>
+                            <recovery_mode>0</recovery_mode>
+                            <recovery_expression/>
+                            <name>{#IFNAME} interface down</name>
+                            <correlation_mode>0</correlation_mode>
+                            <correlation_tag/>
+                            <url/>
+                            <status>0</status>
+                            <priority>4</priority>
+                            <description>interface ifAdminStatus is up(1) and ifOperStatus  is down(2)</description>
+                            <type>0</type>
+                            <manual_close>0</manual_close>
+                            <dependencies/>
+                            <tags/>
+                        </trigger_prototype>
+                    </trigger_prototypes>
                     <graph_prototypes/>
                     <host_prototypes/>
                     <jmx_endpoint/>
