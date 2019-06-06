@@ -9,6 +9,13 @@ Template for monitoring Palo alto firewall PAN OS 8.1 for zabbix 4.0
 - Interface discovery
 - Traps for restart and HA failuire
 
+## Triggers
+ - CPU status
+ - Physical sensor status
+ - Temperature
+ - Free disk space on storage
+ - Physical interface down
+
 # Tested
  - zabbix 4.0 (CentOS 7)
  - PANOS 8.1
